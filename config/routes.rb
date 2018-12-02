@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'login'=> 'session/login'
-  get 'logout'=> 'session/logout'
-  get 'welcome/index'
+  get 'login'=> 'session#login'
+  post "login" => "session#create_login_session"
+  delete 'logout'=> 'session#logout'
+  # get 'welcome/index'
   resources :orids
   resources :users
   root 'welcome#index'

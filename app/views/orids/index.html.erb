@@ -21,7 +21,7 @@
         <td><%= orid.r %></td>
         <td><%= orid.i %></td>
         <td><%= orid.d %></td>
-        <td><%= orid.user %></td>
+        <td><%= orid.user.username %></td>
         <td><%= link_to 'Show', orid %></td>
         <td><%= link_to 'Edit', edit_orid_path(orid) %></td>
         <td><%= link_to 'Destroy', orid, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_063400) do
+ActiveRecord::Schema.define(version: 2018_12_02_124501) do
 
   create_table "orids", force: :cascade do |t|
     t.text "o"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_12_02_063400) do
     t.boolean "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
   end
 
 end

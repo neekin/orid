@@ -1,2 +1,26 @@
-<h1>Session#login</h1>
-<p>Find me in app/views/session/login.html.erb</p>
+
+<div class="loginform center-block">
+  <%= form_tag "/login" do %>
+  <div class="input center-block">
+    <%= label_tag "用户名" %>
+
+    <%= text_field_tag :username, params[:username] %>
+  </div>
+  <div class="input center-block">
+    <%= label_tag "密　码" %>
+
+    <%= password_field_tag :password, params[:password] %>
+  </div>
+
+
+
+      <p class="text-center"> <%= submit_tag "登录", :class => "login-button btn btn-primary " %> </p>
+      <div class="text-center">
+        <%= link_to "没有账号？注册一个吧", register_path %>
+      </div>
+    <% end %>
+
+
+
+
+</div>
