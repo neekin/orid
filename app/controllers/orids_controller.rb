@@ -14,6 +14,10 @@ class OridsController < ApplicationController
 
   # GET /orids/new
   def new
+    if !current_user
+      flash.notice='请先登录'
+      redirect_to :login
+    end
     @orid = Orid.new
   end
 
@@ -24,6 +28,7 @@ class OridsController < ApplicationController
   # POST /orids
   # POST /orids.json
   def create
+
     @orid = Orid.new(orid_params)
 
     respond_to do |format|
