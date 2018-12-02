@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>O:</strong>
+  <%= @orid.o %>
+</p>
+
+<p>
+  <strong>R:</strong>
+  <%= @orid.r %>
+</p>
+
+<p>
+  <strong>I:</strong>
+  <%= @orid.i %>
+</p>
+
+<p>
+  <strong>D:</strong>
+  <%= @orid.d %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @orid.user.nickname %>
+</p>
+
+<%= link_to 'Edit', edit_orid_path(@orid) %> |
+<%= link_to 'Back', orids_path %>

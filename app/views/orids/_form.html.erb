@@ -1,0 +1,46 @@
+<%= form_with(model: orid, local: true) do |form| %>
+  <% if orid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(orid.errors.count, "error") %> prohibited this orid from being saved:</h2>
+
+      <ul>
+        <% orid.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label 'Objective(事实)' %>
+    <br>
+    <%= form.text_area :o %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Reflective(感受)' %>
+    <br>
+    <%= form.text_area :r %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Interpretive(想法)' %>
+    <br>
+    <%= form.text_area :i %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Decisional(决定)' %>
+    <br>
+    <%= form.text_area :d %>
+  </div>
+
+  <div class="field">
+    <%#= form.label :user_id %>
+    <%= form.hidden_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit value: '提交', class: 'btn btn-primary'  %>
+  </div>
+<% end %>
