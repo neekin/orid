@@ -24,7 +24,7 @@
         <%  if current_user %>
           <li>
             <%#= link_to "register", '/register' %>
-            <%= link_to current_user.username, users_path %>
+            <%= link_to current_user.username, current_user %>
             <!--          <a href="#"></a>-->
           </li>
           <li>

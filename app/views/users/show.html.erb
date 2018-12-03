@@ -1,28 +1,22 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Avater:</strong>
+  <%#= @user.avater %>
+  <%= image_tag @user.gravatar_url %>
+</p>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-<p>
-  <strong>auth:</strong>
-  <%= @user.token %>
-</p>
+
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Avater:</strong>
-  <%= @user.avater %>
-</p>
+
 
 <p>
   <strong>Nickname:</strong>
@@ -34,5 +28,5 @@
   <%= @user.gender %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to '修改密码', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

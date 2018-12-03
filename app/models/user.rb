@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include Gravtastic
+  # gravtastic :author_email
+  gravtastic :email
   has_many :orids
   has_secure_password
 
