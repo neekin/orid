@@ -1,32 +1,42 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Avater:</strong>
-  <%#= @user.avater %>
-  <%= image_tag @user.gravatar_url %>
-</p>
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<div class="pageContainer">
+  <%= render '/users/leftnav' %>
+  <div class="pageContent">
+
+    <p id="notice"><%= notice %></p>
+    
+    <p>
+      <strong>Avater:</strong>
+      <%#= @user.avater %>
+      <%= image_tag @user.gravatar_url %>
+    </p>
+    <p>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </p>
+
+
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+
+
+    <p>
+      <strong>Nickname:</strong>
+      <%= @user.nickname %>
+    </p>
+
+    <p>
+      <strong>Gender:</strong>
+      <%= @user.gender %>
+    </p>
+  </div>
+
+</div>
 
 
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
 
-
-<p>
-  <strong>Nickname:</strong>
-  <%= @user.nickname %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<%= link_to '修改密码', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<!--<%#= link_to '修改密码', edit_user_path(@user) %> |-->
+<%#= link_to 'Back', users_path %>

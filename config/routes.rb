@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   delete 'logout'=> 'session#logout'
   # get 'welcome/index'
   resources :orids
-  resources :users
+  resources :users ,only:[:show,:create,:new]
   root 'welcome#index'
   get 'register'=> 'users#new'
   get 'postorid'=>'orids#new'
