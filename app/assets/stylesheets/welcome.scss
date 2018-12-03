@@ -4,7 +4,8 @@
 body{
   padding-top: 50px;
 }
-body.welcome-index{
+body.welcome-index,
+body.orids-index{
   background-image: url('/images/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +20,7 @@ body.welcome-index{
 .welcome-index .panel-default > .panel-heading{
   background-color: rgba(222,222,222,0.5);
 }
-
+body.orids-index .banner1,
 .welcome-index .banner1{
   background-image: url('/images/testimonial_bg.jpg');
   background-position: center center;

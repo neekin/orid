@@ -1,35 +1,56 @@
-<p id="notice"><%= notice %></p>
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>O</th>-->
+<!--      <th>R</th>-->
+<!--      <th>I</th>-->
+<!--      <th>D</th>-->
+<!--      <th>User</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
 
-<h1>Orids</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>O</th>
-      <th>R</th>
-      <th>I</th>
-      <th>D</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<!--  <tbody>-->
+    <%# @orids.each do |orid| %>
+<!--      <tr>-->
+<!--        <td><%#= orid.o %></td>-->
+<!--        <td><%#= orid.r %></td>-->
+<!--        <td><%#= orid.i %></td>-->
+<!--        <td><%#= orid.d %></td>-->
+<!--        <td><%#= orid.user.username %></td>-->
+<!--        <td><%#= link_to 'Show', orid %></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--      </tr>-->
+    <%# end %>
+<!--  </tbody>-->
+<!--</table>-->
+<%= render '/welcome/banner' %>
+<div class="container-fluid">
+  <div class="row">
     <% @orids.each do |orid| %>
-      <tr>
-        <td><%= orid.o %></td>
-        <td><%= orid.r %></td>
-        <td><%= orid.i %></td>
-        <td><%= orid.d %></td>
-        <td><%= orid.user.username %></td>
-        <td><%= link_to 'Show', orid %></td>
-        <td><%= link_to 'Edit', edit_orid_path(orid) %></td>
-        <td><%= link_to 'Destroy', orid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="col-md-4 col-sm-6 col-lg-4 col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="pannel-title">
+            创建时间： <%= orid.created_at.strftime('%Y-%m-%d %H:%m') %>
+            <%= link_to '修改', edit_orid_path(orid),:class=>'pull-right' %>
+            <%= link_to '查看', orid,:class=>'pull-right' %>
+          </h4>
+        </div>
+        <div class="panel-body">
+          Objective
+          <div class="well well-lg"><%= raw orid.o %></div>
+          Reflective
+          <div class="well well-lg"><%= raw orid.r %></div>
+          Interpretive
+          <div class="well well-lg"><%= raw orid.i %></div>
+          Decisional
+          <div class="well well-lg"><%= raw orid.d %></div>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Orid', new_orid_path %>

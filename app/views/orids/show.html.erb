@@ -2,28 +2,28 @@
 
 <p>
   <strong>O:</strong>
-  <%= @orid.o %>
+  <%=raw @orid.o %>
 </p>
 
 <p>
   <strong>R:</strong>
-  <%= @orid.r %>
+  <%=raw @orid.r %>
 </p>
 
 <p>
   <strong>I:</strong>
-  <%= @orid.i %>
+  <%=raw @orid.i %>
 </p>
 
 <p>
   <strong>D:</strong>
-  <%= @orid.d %>
+  <%=raw @orid.d %>
 </p>
 
 <p>
   <strong>User:</strong>
   <%= @orid.user.username %>
 </p>
-
+<%= link_to 'Destroy', @orid, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Edit', edit_orid_path(@orid) %> |
 <%= link_to 'Back', orids_path %>
