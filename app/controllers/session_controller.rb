@@ -6,7 +6,8 @@ class SessionController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       # if params[:rememberme]
-      cookies.permanent[:token] =user.token #持久化保存
+      # cookies.permanent[:token] =user.token #持久化保存
+      log_in(user)
       # else
       #   cookies[:token] = user.auth_token #临时性保存 类似 session
       # end

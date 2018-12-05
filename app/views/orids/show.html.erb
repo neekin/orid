@@ -1,29 +1,20 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>O:</strong>
-  <%=raw @orid.o %>
-</p>
 
-<p>
-  <strong>R:</strong>
-  <%=raw @orid.r %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      Objective
+      <div class="well well-lg"><%= raw @orid.o %></div>
+      Reflective
+      <div class="well well-lg"><%= raw @orid.r %></div>
+      Interpretive
+      <div class="well well-lg"><%= raw @orid.i %></div>
+      Decisional
+      <div class="well well-lg"><%= raw @orid.d %></div>
+      <%= link_to '删除', @orid, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to '编辑', edit_orid_path(@orid) %> |
+      <%= link_to '返回', orids_path %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>I:</strong>
-  <%=raw @orid.i %>
-</p>
-
-<p>
-  <strong>D:</strong>
-  <%=raw @orid.d %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @orid.user.username %>
-</p>
-<%= link_to 'Destroy', @orid, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_orid_path(@orid) %> |
-<%= link_to 'Back', orids_path %>

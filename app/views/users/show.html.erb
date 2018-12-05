@@ -3,40 +3,20 @@
   <div class="pageContent">
 
     <p id="notice"><%= notice %></p>
-
     <p>
-      <strong>Avater:</strong>
+      <strong>头像:</strong>
       <%#= @user.avater %>
       <%= image_tag @user.gravatar_url %>
     </p>
     <p>
-      <strong>Username:</strong>
+      <strong>用户名:</strong>
       <%= @user.username %>
     </p>
+    <%= render partial: @viewname, locals: { user: @user } %>
 
+    <!--<%#= link_to '修改密码', edit_user_path(@user) %> |-->
+<%#= link_to 'Back', users_path %>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-
-
-    <p>
-      <strong>Nickname:</strong>
-      <%= @user.nickname %>
-    </p>
-
-    <p>
-      <strong>Gender:</strong>
-      <%= @user.gender %>
-    </p>
   </div>
 
 </div>
-
-
-
-
-
-<!--<%#= link_to '修改密码', edit_user_path(@user) %> |-->
-<%#= link_to 'Back', users_path %>

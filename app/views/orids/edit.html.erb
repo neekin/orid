@@ -1,6 +1,14 @@
-<h1>Editing Orid</h1>
 
-<%= render 'form', orid: @orid %>
+<div class="container">
 
-<%= link_to 'Show', @orid %> |
-<%= link_to 'Back', orids_path %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>修改笔记</h1>
+    </div>
+    <div class="panel-body">
+      <%= render 'form', orid: @orid %>
+      <%= link_to '查看', @orid %> |
+      <%= link_to '返回', orids_path %>
+    </div>
+  </div>
+</div>

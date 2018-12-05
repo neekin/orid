@@ -3,7 +3,11 @@
         <h1>ORID 聚焦式学习</h1>
         <p>你从未遇过的高效学习方式</p>
         <p>
+          <% if @orids %>
+            <%=  link_to '记录一条ORID' , postorid_path ,:class=>'btn btn-primary btn-lg' %>
+          <%else %>
             <%=  link_to '记录我的第一条ORID' , postorid_path ,:class=>'btn btn-primary btn-lg' %>
+            <% end %>
         </p>
     </div>
 </div>

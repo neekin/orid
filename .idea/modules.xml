@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/oridmanage.iml" filepath="$PROJECT_DIR$/.idea/oridmanage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/orid.iml" filepath="$PROJECT_DIR$/.idea/orid.iml" />
     </modules>
   </component>
 </project>

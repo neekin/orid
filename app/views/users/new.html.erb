@@ -1,9 +1,10 @@
 <div class="register center-block">
+  <%= render 'register', user: @user %>
 
-  <h1>注册用户</h1>
+<div class="text-center">
 
-  <%= render 'form', user: @user %>
 
-<%#= link_to 'Back', users_path %>
+  <%= link_to '已有账户，直接登录',login_path %>
+</div>
 </div>
 

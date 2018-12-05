@@ -4,7 +4,7 @@ class OridsController < ApplicationController
   # GET /orids
   # GET /orids.json
   def index
-    @orids = Orid.all
+    @orids = Orid.where(user_id:current_user.id)
   end
 
   # GET /orids/1
@@ -70,6 +70,9 @@ class OridsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_orid
       @orid = Orid.find(params[:id])
+    end
+    def set_user
+      @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

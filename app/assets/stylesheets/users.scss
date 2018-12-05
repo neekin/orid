@@ -10,6 +10,58 @@ body.users-new{
     margin-top: 60px;
     color:#0094ff;
   }
+
+
+  .register{
+    height:400px;
+    width: 400px;
+    margin-top: 60px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding-top: 60px;
+    .login-btn{
+      background-color: rgba(0, 148, 255, 0.6)
+    }
+    .actions{
+      text-align:center;
+    }
+    .button{
+      background-color: rgba(0,148,255,0.6);
+      border:none;
+    }
+    .input{
+      border-radius: 19px;
+      //border:1px solid #0094ff;
+      width: 280px;
+      background-color: rgba(0,148,255,0.3);
+      height:38px;
+      line-height: 38px;
+      position: relative;
+      overflow: hidden;
+      margin:0 auto 40px;
+      //margin-bottom: 40px;
+      font-size: 14px;
+      label{
+        position: absolute;
+        left:0;
+        height:100%;
+        color:#fff;
+        width: 25%;
+        text-align: center;
+        background-color:rgba(0,148,255,0.3);
+      }
+      input{
+        width: 75%;
+        border:none;
+        outline: none;
+        position: absolute;
+        right:0;
+        background-color:rgba(0,148,255,0.3);
+        color:#fff;
+      }
+    }
+  }
+
 }
 
 body.users-show{
@@ -83,3 +135,4 @@ body.users-show{
     background-color:#DFDFDF;
   }
 }
+
