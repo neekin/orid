@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :messages do
+    collection do
+      get :events
+    end
+  end
   get 'login'=> 'session#login'
   post "login" => "session#create_login_session"
   delete 'logout'=> 'session#logout'
