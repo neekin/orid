@@ -11,8 +11,10 @@
       <div class="well well-lg"><%= raw @orid.i %></div>
       Decisional
       <div class="well well-lg"><%= raw @orid.d %></div>
-      <%= link_to '删除', @orid, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to '编辑', edit_orid_path(@orid) %> |
+      <% if current_user == @orid.user %>
+        <%= link_to '删除', @orid, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to '编辑', edit_orid_path(@orid) %> |
+      <% end %>
       <%= link_to '返回', orids_path %>
     </div>
   </div>

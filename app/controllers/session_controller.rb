@@ -8,10 +8,12 @@ class SessionController < ApplicationController
       # if params[:rememberme]
       # cookies.permanent[:token] =user.token #持久化保存
       log_in(user)
-      # else
-      #   cookies[:token] = user.auth_token #临时性保存 类似 session
-      # end
-      redirect_to :root
+      if params[:callback]
+        redirect_to :postorid
+
+      else
+        redirect_to :root
+      end
     else
       flash.notice = "用户名密码错误!"
       redirect_to :login
@@ -28,6 +30,6 @@ class SessionController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password,:callback)
   end
 end

@@ -1,27 +1,25 @@
 <% if  @orids %>
+  <table class="table table-striped">
     <%  @orids.each do |orid| %>
-            <div class="col-md-4 col-sm-6 col-lg-4 col-xs-6">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="pannel-title">
-                    创建时间： <%= orid.created_at.strftime('%Y-%m-%d %H:%m') %>
-    <%= link_to '修改', edit_orid_path(orid),:class=>'pull-right' %>
-    <%= link_to '查看', orid,:class=>'pull-right' %>
-                  </h4>
-                </div>
-                <div class="panel-body">
-                  Objective
-                  <div class="well well-lg"><%= raw orid.o %></div>
-                  Reflective
-                  <div class="well well-lg"><%= raw orid.r %></div>
-                  Interpretive
-                  <div class="well well-lg"><%= raw orid.i %></div>
-                  Decisional
-                  <div class="well well-lg"><%= raw orid.d %></div>
-                </div>
-              </div>
-            </div>
+
+        <% if orid.public %>
+        <tr class="success">
+        <% else %>
+        <tr >
+        <% end %>
+        <td width="200">
+          <%= orid.created_at.strftime('%Y-%m-%d %H:%m') %>
+        </td>
+        <td>
+          <%=  orid.o.gsub(/<\/?.*?>/,"") %>
+        </td>
+        <td>
+          <%= link_to '查看', orid,:class=>'pull-right' %>
+          <%= link_to '修改', edit_orid_path(orid),:class=>'pull-right' %>
+        </td>
+      </tr>
     <% end %>
+  </table>
     <% else %>
             <div class="row col-md-12">
               没有笔记，快点创建一个吧

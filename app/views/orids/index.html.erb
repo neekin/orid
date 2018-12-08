@@ -3,25 +3,28 @@
   <div class="row">
     <% if @orids %>
         <% @orids.each do |orid| %>
-        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-6">
+        <div class="col-md-3 col-sm-6 col-lg-3 col-xs-6">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="pannel-title">
-                创建时间： <%= orid.created_at.strftime('%Y-%m-%d %H:%m') %>
+               by- <%= orid.user.username %>  <br> 创建时间： <%= orid.created_at.strftime('%Y-%m-%d %H:%m') %>
               </h4>
             </div>
             <div class="panel-body">
               Objective
-              <div class="well well-lg"><%= raw orid.o %></div>
+              <div class="well well-lg"><%=  orid.o.gsub(/<\/?.*?>/,"") %></div>
               Reflective
-              <div class="well well-lg"><%= raw orid.r %></div>
+              <div class="well well-lg"><%=  orid.r.gsub(/<\/?.*?>/,"") %></div>
               Interpretive
-              <div class="well well-lg"><%= raw orid.i %></div>
+              <div class="well well-lg"><%=  orid.i.gsub(/<\/?.*?>/,"") %></div>
               Decisional
-              <div class="well well-lg"><%= raw orid.d %></div>
+              <div class="well well-lg"><%=  orid.d.gsub(/<\/?.*?>/,"") %></div>
             </div>
+
             <div class="panel-footer clearfix">
+              <% if current_user == orid.user %>
               <%= link_to '修改', edit_orid_path(orid),:class=>'pull-right'%>
+              <% end %>
               <%= link_to '查看', orid,:class=>'pull-right' %>
             </div>
           </div>

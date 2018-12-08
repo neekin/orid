@@ -1,7 +1,8 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body.users-new{
+body.users-new,
+body.users-create{
   background-image: url('/images/testimonial_bg.jpg');
   .register{
     background-color: rgba(255,255,255,0.4);
@@ -10,7 +11,6 @@ body.users-new{
     margin-top: 60px;
     color:#0094ff;
   }
-
 
   .register{
     height:400px;
@@ -73,7 +73,7 @@ body.users-show{
     text-align: center;
   }
   .nav>li>a{
-    color:#444;
+    color:#eee;
     margin: 0 5px;
   }
   .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
@@ -121,6 +121,15 @@ body.users-show{
     overflow: auto;
     position: absolute;
     width: 100%;
+    .pageSidebar{
+      .nav{
+        li{
+          a{
+            color:#444;
+          }
+        }
+      }
+    }
   }
   .footer {
     width: 100%;
@@ -134,5 +143,8 @@ body.users-show{
     z-index: 10;
     background-color:#DFDFDF;
   }
+}
+body > div.pageContainer > div.pageContent > table > tbody > tr > td:nth-child(3) > a{
+  margin: 0 5px;
 }
 

@@ -4,19 +4,26 @@ class OridsController < ApplicationController
   # GET /orids
   # GET /orids.json
   def index
-    @orids = Orid.where(user_id:current_user.id)
+    @orids = Orid.where(public:true).order(:created_at=>'desc')
   end
 
   # GET /orids/1
   # GET /orids/1.json
   def show
+    if current_user != @orid.user
+      if !@orid.public
+        flash.notice='不是公开的笔记'
+        redirect_to orids_path
+      end
+    end
+
   end
 
   # GET /orids/new
   def new
     if !current_user
       flash.notice='请先登录'
-      redirect_to :login
+      redirect_to login_url(callback: 'postorid')
     end
     @orid = Orid.new
   end
@@ -28,9 +35,7 @@ class OridsController < ApplicationController
   # POST /orids
   # POST /orids.json
   def create
-
     @orid = Orid.new(orid_params)
-
     respond_to do |format|
       if @orid.save
         format.html { redirect_to @orid, notice: 'Orid was successfully created.' }
@@ -77,6 +82,6 @@ class OridsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orid_params
-      params.require(:orid).permit(:o, :r, :i, :d, :user_id)
+      params.require(:orid).permit(:o, :r, :i, :d, :user_id, :public)
     end
 end

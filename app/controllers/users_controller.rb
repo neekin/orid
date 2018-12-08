@@ -16,10 +16,8 @@ class UsersController < ApplicationController
     end
     if request.url.include?"myorids"
       @viewname='myorids'
-      @orids = Orid.where(user_id:current_user.id)
+      @orids = Orid.where(user_id:current_user.id).order(:created_at=>'desc')
     end
-
-      # byebug
   end
 
   # GET /users/new
@@ -32,13 +30,14 @@ class UsersController < ApplicationController
   end
   # GET /users/1/edit
   def changepassword
+    @type='changepass'
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.nickname = user_params[:username]
     respond_to do |format|
       if @user.save
         log_in(@user)
@@ -79,6 +78,8 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+      current_user !=@user
+      @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

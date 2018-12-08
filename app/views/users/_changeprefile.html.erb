@@ -1,20 +1,20 @@
 <%= form_with(model: user, local: true) do |form| %>
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label '邮箱' %>
     <%= form.text_field :email %>
   </div>
 
 
 
   <div class="field">
-    <%= form.label :nickname %>
+    <%= form.label '昵称' %>
     <%= form.text_field :nickname %>
   </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.check_box :gender %>
-  </div>
+<!--  <div class="field">-->
+    <%#= form.label '性别' %>
+    <%#= form.check_box :gender %>
+<!--  </div>-->
 
   <div class="actions">
     <%= form.submit '保存' %>
